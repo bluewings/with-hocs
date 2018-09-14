@@ -1,15 +1,17 @@
+
 # with-hocs
 
 
 ```jsx
+import withHOCs from 'with-hocs';
+import { defaultProps, withPropsOnChange } from 'recompose';
+
 function Sample(props) {
   return <h1>HELLO {props.capitalized}!</h1>;
 }
 
 // pass high-order components via hocs props
 const Enhance = withHOCs({ importAs: 'hocs' })(Sample);
-
-...
 
 const hocs = [
   defaultProps({
@@ -21,6 +23,6 @@ const hocs = [
   })),
 ];
 
-// <Enhance hocs={hocs} name="sydney" /> → HELLO SYDNEY!
+<Enhance hocs={hocs} name="sydney" />  // HELLO SYDNEY!
 
 ```
